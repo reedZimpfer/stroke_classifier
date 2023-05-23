@@ -1,10 +1,12 @@
-# About The Project
-
 # Stroke Classifier
 
-# Background
+## Project Description
 
 Stroke is a serious medical condition that occurs when the blood supply to part of the brain is interrupted or reduced, leading to brain damage and potential long-term disability or death. The risk of stroke is affected by a wide range of factors, including age, gender, hypertension, heart disease, obesity, and smoking.
+
+## Objective : 
+
+The project objective is to  develop a machine learning model for early stroke prediction.
 
 
 ##  Dataset : 
@@ -18,9 +20,7 @@ The goal of this dataset is to develop a predictive model that can accurately id
 <img width="846" alt="image" src="https://github.com/yeyanwang/stroke_classifier/assets/116701851/65f71358-7d88-4b14-bb81-04aba45e9336">
 
 
-## Objective : 
 
-The project objective is to  develop a machine learning model for early stroke prediction.
 
 ## Solution : 
 
