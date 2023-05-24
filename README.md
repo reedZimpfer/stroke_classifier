@@ -1,69 +1,113 @@
-# Stroke Classifier
+# Stroke Prediction Machine Learning Model
 
 ## Project Description
 
-Stroke is a serious medical condition that occurs when the blood supply to part of the brain is interrupted or reduced, leading to brain damage and potential long-term disability or death. The risk of stroke is affected by a wide range of factors, including age, gender, hypertension, heart disease, obesity, and smoking.Stroke is an emergency condition that needs to be treated as soon as possible, because brain cells can die in just a matter of minutes. Prompt and appropriate treatment measures can minimize the level of brain damage and prevent possible complications.
+Stroke is a serious medical condition that occurs when the blood supply to part of the brain is interrupted or reduced, leading to brain damage and potential long-term disability or death. The risk of stroke is affected by a wide range of factors, including age, gender, hypertension, heart disease, obesity, and smoking. 
 
-In this machine learning project, the overall topic that will be resolved is in the health sector regarding stroke, where it will try to predict the possibility of a stroke in a person with certain conditions based on several factors including: age, certain diseases (hypertension, heart disease) who are at high risk of developing stroke. strokes, cigarettes, etc.
+Detecting a stroke in its early stages brings numerous advantages, including timely medical intervention, reduced brain damage, prevention of long-term disabilities, identification of underlying causes, and the facilitation of swift medical decision-making to optimize patient outcomes.
 
-As previously explained, stroke can kill the sufferer in a matter of minutes. Detecting stroke with the existing causative factors with the help of machine learning can be very useful in the world of health to detect stroke early in order to increase the sense of heart among sufferers so that strokes can be prevented early.
+For this project, our objective is to create a machine learning model for early stroke detection, focusing on various causative factors. This model aims to assist clinical teams in predicting or assessing the risk of stroke occurrence, enabling timely medical intervention, minimizing brain damage, preventing long-term disabilities, identifying underlying causes, and facilitating quick medical decision-making to optimize patient outcomes.
 
+##  Data Overview
 
+The [stroke dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset?select=healthcare-dataset-stroke-data.csv) comprises a compilation of patients' medical records. It encompasses a wide range of information, including patient demographics, medical history, lifestyle factors, and the presence or absence of a stroke for each patient.
 
-## Objective 
+Here is a snippet of the dataset: 
+![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/7502f72d-72be-43a2-8c5c-eb2c1668f1df)
 
-The project objective is to  develop a machine learning model for early stroke prediction.
+## Built With 
+- Python and Packages (eg. scikit-learn, matplotlib, searborn, pickle, etc.)
+- Flask
+- HTML
+- CSS
 
+## Getting Started 
+**Prerequisites**
 
-##  Dataset 
+Make sure you have installed all of the following prerequisites on your development machine:
+- Git
+- Python and set up your virtual environment
+- `pip install flask` globally
+- Your favoriate code editor (e.g. VScode, etc.)
+- Your favoriate browser (e.g. Google Chrome, etc.)
 
-The stroke dataset is a collection of medical records for patients. The dataset includes information on patient demographics, medical history, and lifestyle factors, as well as whether or not each patient had a stroke.
+**Installation**
 
-https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset?select=healthcare-dataset-stroke-data.csv 
+1. Clone this repo and save it in your local directory, to clone with URL run the following code in terminal
+  
+     `git clone https://github.com/yeyanwang/stroke_classifier.git`
+  
+2. Start Flask app by running the following code in terminal
 
-The goal of this dataset is to develop a predictive model that can accurately identify patients who are at high risk of stroke, so that appropriate preventative measures can be taken to reduce their risk.
+     `python app.py`
+  
+3. Visit [localhost: 5000](http://localhost:5000/) in your browser and enjoy!
 
-<img width="846" alt="image" src="https://github.com/yeyanwang/stroke_classifier/assets/116701851/65f71358-7d88-4b14-bb81-04aba45e9336">
+## Machine Learning Pipline
+1. **Data Collection** 
+   
+   Data was collected from [Kaggle](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset)
+   
+2. **Model Selection** 
 
+   The Random Forest Classifier was selected for this problem due to its reputation for achieving high accuracy in classification tasks. It is a popular choice in the healthcare and medical industry, where precise and reliable predictions are crucial.
+   
+3. **Exploratory Data Analysis (EDA)** 
 
+   The below snippets are some interesting observations we discovered: 
+   - **Data Distribution with Histogram Analysis**
+   
+     ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/efacd65c-d4c2-4060-a508-e7ef2be771f8)
+     
+   - **Closer Examination on Target Variable** 
+   
+     ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/7ed0adda-b624-4699-8546-021602894d69)
+     
+   - **Missing Values on 'bmi' column**
+   
+     ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/6e6ad77a-8086-4b70-8910-a92c0a0cfef7)
+     
+     **Filled in Missing Values with Imputed values**
+     
+     ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/65da8d6e-f563-4fcb-a8f9-7763ea5aa9fc)
+     
+   - **Singleton Record on 'gender' column**
+   
+     ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/8ed61800-b292-4080-b882-2d37240c243f)
+     
+     **Dropped Singleton Record**
+     
+     ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/51b3de32-cf32-4cb5-8519-cd5c8c2c82fc)
+     
+   - **Uneven Distribution 'bmi' values**
+    
+     ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/dda914f3-391f-4bcf-92c8-1c239ee1e157)
+     
+     **Binning 'bmi' values**
+     ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/742d74c4-c14c-4a72-a78b-a154d0092eeb)
+     
+     ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/cca8c744-b3fc-4fe6-98ae-20da5b87f464)
+     
+4. **Data Preprocessing** 
+   Data was cleaned and prepared for further analysis. This includes: 
+   - Applied oversampling methods to handle imbalanced data
+   - Apllied encoding to categorical varibales
+   - Applied feature scaling to transform numerical features into a consistent range
+   - Divided data into training and testing sets using `train_test_split` module
+5. **Modeling training**
+   - Trained 3 models using different resampling methods
+6. **Evaluation**
+   - Compared the accuracy scores, false positive rates (FPR) and false negative rates (FNR) to access the performance of all 3 models 
+   
+   See more detail about our [final model](https://github.com/yeyanwang/stroke_classifier/blob/main/stroke_classifier_final%20.ipynb)
+7. **Flask Deployment**
+   - Implemented the model logic in our home route to handle incoming requests
+   - Created Web-based UI with HTML and CSS
+   
+   Here is a snippet of the final deployment:
+   ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/ab0b388e-f0be-464d-bd94-311f4d5ce29a)
 
-
-## Solution 
-
-Making Machine Learning models with the Random Forest Algorithm that can classify someone who has the potential to have a stroke.
-
-# Exploratory Data Analysis (EDA) 
-
-### Examine & Impute Missing Values
-
- <img width="783" alt="image" src="https://github.com/yeyanwang/stroke_classifier/assets/116701851/45df1501-6554-42c1-a717-b3f7a679c4ee">
-
-### Examine Data Distribution on Feature Variables 
-
-<img width="659" alt="image" src="https://github.com/yeyanwang/stroke_classifier/assets/116701851/23b59170-d4cb-4be7-a8ca-572a2b48ce13">
-
-### Examine Data Distribution on Target Variable
-
-<img width="792" alt="image" src="https://github.com/yeyanwang/stroke_classifier/assets/116701851/33abaa73-a197-48a0-ab27-410523997c5c">
-
-### Examine & Handle Singleton Record
-
-<img width="762" alt="image" src="https://github.com/yeyanwang/stroke_classifier/assets/116701851/21795c44-4329-4391-a511-01c4f0fb45c1">
-
-
-# Data Preprocessing
-
-Data Preprocessing is divided into four different parts.
-
-1. Handle Imbalanced data 
- 
-2. Feature Scaling
- 
-3. Encode Categorical Variables
- 
-4. Train test split.
-
-
-
-
-
+## Credits 
+- [Kevin Lee](https://github.com/kevinclee26)
+- [Kaggle](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset?select=healthcare-dataset-stroke-data.csv)
+- UC Berkely Extension Data Analytics Bootcamp
