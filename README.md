@@ -83,29 +83,37 @@ Make sure you have installed all of the following prerequisites on your developm
     
      ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/dda914f3-391f-4bcf-92c8-1c239ee1e157)
      
-     **Binning 'bmi' values**
+     **Binning 'bmi' values** ([Model 3](https://github.com/yeyanwang/stroke_classifier/blob/main/stroke_classifier_optimization_1.ipynb) only)
      ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/742d74c4-c14c-4a72-a78b-a154d0092eeb)
      
      ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/cca8c744-b3fc-4fe6-98ae-20da5b87f464)
      
 4. **Data Preprocessing** 
+
    Data was cleaned and prepared for further analysis. This includes: 
    - Applied oversampling methods to handle imbalanced data
    - Apllied encoding to categorical varibales
    - Applied feature scaling to transform numerical features into a consistent range
    - Divided data into training and testing sets using `train_test_split` module
-5. **Modeling training**
+5. **Modeling Training and Testing**
    - Trained 3 models using different resampling methods
+   - Tested the models
 6. **Evaluation**
-   - Compared the accuracy scores, false positive rates (FPR) and false negative rates (FNR) to access the performance of all 3 models 
+   - Utilized accuracy scores, confusion matrix and classification reports to compare to access the performance of all 3 models 
    
    See more detail about our [final model](https://github.com/yeyanwang/stroke_classifier/blob/main/stroke_classifier_final%20.ipynb)
-7. **Flask Deployment**
+7. **Model Deployment with Flask**
    - Implemented the model logic in our home route to handle incoming requests
    - Created Web-based UI with HTML and CSS
    
-   Here is a snippet of the final deployment:
-   ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/ab0b388e-f0be-464d-bd94-311f4d5ce29a)
+   Check out the snippets below:
+   - Form Page Example:
+   
+   ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/c5be24c2-27ba-470c-a44f-a1511cd96bec)
+   
+   - Result Page Example: 
+   
+   ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/a0e2a839-75e7-4b76-a0e9-1b45539dafbb)
 
 ## Credits 
 - [Kevin Lee](https://github.com/kevinclee26)
