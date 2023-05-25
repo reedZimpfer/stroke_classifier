@@ -50,7 +50,8 @@ Make sure you have installed all of the following prerequisites on your developm
    
 2. **Model Selection** 
 
-   The Random Forest Classifier was selected for this problem due to its reputation for achieving high accuracy in classification tasks. It is a popular choice in the healthcare and medical industry, where precise and reliable predictions are crucial.
+   The **Random Forest Classifier** was selected for this problem due to its reputation for achieving high accuracy in classification tasks. 
+   It is a popular choice in the healthcare and medical industry, where precise and reliable predictions are crucial.
    
 3. **Exploratory Data Analysis (EDA)** 
 
@@ -95,11 +96,18 @@ Make sure you have installed all of the following prerequisites on your developm
    - Apllied encoding to categorical varibales
    - Applied feature scaling to transform numerical features into a consistent range
    - Divided data into training and testing sets using `train_test_split` module
-5. **Modeling Training and Testing**
-   - Trained 3 models using different resampling methods
-   - Tested the models
+5. **Modeling Training**
+
+   Trained 3 models using different resampling methods  
+   - **Model 1** used oversampled data with the `RandomOverSampler` technique
+   - **Model 2** used oversampled data with the `SMOTE` technique
+   - **Model 3** used oversampled data with `RandomOverSampler` and applied additional binning to the 'bmi' column
+
 6. **Evaluation**
-   - Utilized accuracy scores, confusion matrix and classification reports to compare to access the performance of all 3 models 
+   - Utilized accuracy scores, confusion matrix and classification reports to compare to access the performance of all 3 models
+   - We ultimately selected **model 1** as the final model due to its overall superior performance. 
+   
+   Despite having a false positive rate of 1.82%, it is more advantageous in the context of predicting stroke occurrence to falsely identify patients as likely to have a stroke. This allows clinicians to allocate more attention and care to these patients. Conversely, a high false negative rate would be concerning, where patients who have a risk of stroke will not be intervened. In other words, it is preferable to mistakenly identify patients who are likely to have a stroke, rather than missing such cases. 
    
    See more detail about our [final model](https://github.com/yeyanwang/stroke_classifier/blob/main/stroke_classifier_final%20.ipynb)
 7. **Model Deployment with Flask**
@@ -107,13 +115,13 @@ Make sure you have installed all of the following prerequisites on your developm
    - Created Web-based UI with HTML and CSS
    
    Check out the snippets below:
-   - Form Page Example:
+   - **Landing Page:**
    
-   ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/c5be24c2-27ba-470c-a44f-a1511cd96bec)
+   ![Landing Page](https://github.com/yeyanwang/stroke_classifier/assets/120543690/93037122-c541-4cb0-9307-6937aa6f0252)
    
-   - Result Page Example: 
+   - **Result Page**
    
-   ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/a0e2a839-75e7-4b76-a0e9-1b45539dafbb)
+   ![Result Page](https://github.com/yeyanwang/stroke_classifier/assets/120543690/1bd99269-90c2-49fe-b023-9f398b486b18)
 
 ## Credits 
 - [Kevin Lee](https://github.com/kevinclee26)
